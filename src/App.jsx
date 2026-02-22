@@ -431,7 +431,7 @@ IMPORTANT: Assure-toi que les IDs YouTube sont réels et correspondent à des cl
       const match = text.match(/\[[\s\S]*\]/);
       if(!match) throw new Error("Réponse invalide");*/
       //const parsed = JSON.parse(match[0]);
-      const parsed = data.response?.candidates?.[0]?.content?.parts?.[0]?.text ? JSON.parse(data.response.candidates[0].content.parts[0].text) : null;
+      const parsed = data?.candidates?.[0]?.content?.parts?.[0]?.text ? JSON.parse(data.candidates[0].content.parts[0].text) : null;
       if(!Array.isArray(parsed)||!parsed.length) throw new Error("Liste vide");
       setQueue(parsed);
       setCurrentIdx(0);
