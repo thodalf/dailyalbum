@@ -7,10 +7,16 @@ const GENRE_COLORS = {
 };
 
 async function storageGet(key) {
-  try { const r = await window.storage.get(key); return r ? JSON.parse(r.value) : null; } catch { return null; }
+  try {
+    const val = localStorage.getItem(key);
+    return val ? JSON.parse(val) : null;
+  } catch { return null; }
 }
+
 async function storageSet(key, value) {
-  try { await window.storage.set(key, JSON.stringify(value)); } catch {}
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch {}
 }
 
 function StreamLink({ href, label, color, icon }) {
