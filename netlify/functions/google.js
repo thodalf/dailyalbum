@@ -11,11 +11,13 @@ export default async (req, context) => {
       "Content-Type": "application/json",
       "x-goog-api-key": process.env.GEMINI_API_KEY,
     },
-    body: JSON.stringify([
+    body: JSON.stringify({
+    "contents": [
       {
         "parts": [body]
       }
-    ]),
+    ]
+  }),
   });
 
   const data = await response.json();
