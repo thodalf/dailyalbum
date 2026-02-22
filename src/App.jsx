@@ -427,10 +427,11 @@ IMPORTANT: Assure-toi que les IDs YouTube sont réels et correspondent à des cl
       });
       if(!res.ok) throw new Error(`Erreur API ${res.status}`);
       const data = await res.json();
-      const text = data.content?.[0]?.text||"";
+      /*const text = data.content?.[0]?.text||"";
       const match = text.match(/\[[\s\S]*\]/);
-      if(!match) throw new Error("Réponse invalide");
-      const parsed = JSON.parse(match[0]);
+      if(!match) throw new Error("Réponse invalide");*/
+      //const parsed = JSON.parse(match[0]);
+      const parsed = data.response?.candidates?.[0]?.content?.parts?.[0]?.text ? JSON.parse(data.response.candidates[0].content.parts[0].text) : null;
       if(!Array.isArray(parsed)||!parsed.length) throw new Error("Liste vide");
       setQueue(parsed);
       setCurrentIdx(0);
