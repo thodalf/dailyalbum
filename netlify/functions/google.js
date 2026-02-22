@@ -9,7 +9,7 @@ export default async (req, context) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "x-api-key": process.env.GEMINI_API_KEY,
+      "x-goog-api-key": process.env.GEMINI_API_KEY,
     },
     body: JSON.stringify([
       {
