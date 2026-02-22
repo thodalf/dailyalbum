@@ -413,9 +413,9 @@ Genres possibles: Rock, Jazz, Électronique, Hip-Hop, Metal, Folk, Soul/R&B, Cla
 IMPORTANT: Assure-toi que les IDs YouTube sont réels et correspondent à des clips ou performances officiels de ces albums 2024-2025.`;
 
     try {
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
-        method:"POST",
-        headers:{"Content-Type":"application/json","anthropic-dangerous-direct-browser-access":"true"},
+      const res = await fetch("/api/claude", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:2000,messages:[{role:"user",content:prompt}]}),
       });
       if(!res.ok) throw new Error(`Erreur API ${res.status}`);
