@@ -407,10 +407,10 @@ Génère exactement 5 albums RÉELS et DIFFÉRENTS sortis entre janvier 2024 et 
 Réponds UNIQUEMENT avec un tableau JSON valide, sans markdown ni texte autour.
 
 Format de chaque objet:
-{"title":"...","artist":"...","genre":"Rock","year":2024,"tracks":11,"duration":"48 min","moods":["intense","sombre","énergique"],"description":"2-3 phrases sur le projet artistique et le concept de l'album.","youtubeIds":[{"id":"VRAI_ID_YOUTUBE_A_METTRE_DANS_LE_EMBED","title":"Titre du morceau"},{"id":"VRAI_ID_YOUTUBE_A_METTRE_DANS_LE_EMBED_2","title":"Titre du morceau 2"}]}
+{"title":"...","artist":"...","genre":"Rock","year":2024,"tracks":11,"duration":"48 min","moods":["intense","sombre","énergique"],"description":"2-3 phrases sur le projet artistique et le concept de l'album.","youtubeIds":[{"id":"ID_YOUTUBE_A_METTRE_DANS_LE_EMBED","title":"Titre du morceau"},{"id":"ID_YOUTUBE_A_METTRE_DANS_LE_EMBED_2","title":"Titre du morceau 2"}]}
 
 Genres possibles: Rock, Jazz, Électronique, Hip-Hop, Metal, Folk, Soul/R&B, Classique, Pop, Ambient
-IMPORTANT: Assure-toi que les IDs YouTube sont réels et correspondent à des clips ou performances officiels de ces albums 2024-2025.`;
+IMPORTANT: Assure-toi que les IDs YouTube sont réels et correspondent à des clips ou performances officiels de ces albums 2024-2025 et qu'ils sont valides pour l'integrer dans un www.youtube.com/embed/.`;
 
     try {
       /*const res = await fetch("/api/claude", {
